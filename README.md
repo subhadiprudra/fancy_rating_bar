@@ -144,34 +144,58 @@ FancyRatingBar(
 ## Screenshots
 
 ### Aurora Theme
-![Aurora Rating View](screenshots/aurora1.png)
-![Aurora Review View](screenshots/aurora2.png)
-![Aurora Success View](screenshots/aurora3.png)
+<table>
+  <tr>
+    <td><img src="screenshots/aurora1.png" width="250" alt="Aurora Rating View"/></td>
+    <td><img src="screenshots/aurora2.png" width="250" alt="Aurora Review View"/></td>
+    <td><img src="screenshots/aurora3.png" width="250" alt="Aurora Success View"/></td>
+  </tr>
+</table>
 
 ### Sunset Theme
-![Sunset Rating View](screenshots/sunset1.png)
-![Sunset Review View](screenshots/sunset2.png)
-![Sunset Success View](screenshots/sunset3.png)
+<table>
+  <tr>
+    <td><img src="screenshots/sunset1.png" width="250" alt="Sunset Rating View"/></td>
+    <td><img src="screenshots/sunset2.png" width="250" alt="Sunset Review View"/></td>
+    <td><img src="screenshots/sunset3.png" width="250" alt="Sunset Success View"/></td>
+  </tr>
+</table>
 
 ### Ocean Theme
-![Ocean Rating View](screenshots/ocean1.png)
-![Ocean Review View](screenshots/ocean2.png)
-![Ocean Success View](screenshots/ocean3.png)
+<table>
+  <tr>
+    <td><img src="screenshots/ocean1.png" width="250" alt="Ocean Rating View"/></td>
+    <td><img src="screenshots/ocean2.png" width="250" alt="Ocean Review View"/></td>
+    <td><img src="screenshots/ocean3.png" width="250" alt="Ocean Success View"/></td>
+  </tr>
+</table>
 
 ### Forest Theme
-![Forest Rating View](screenshots/forest1.png)
-![Forest Review View](screenshots/forest2.png)
-![Forest Success View](screenshots/forest3.png)
+<table>
+  <tr>
+    <td><img src="screenshots/forest1.png" width="250" alt="Forest Rating View"/></td>
+    <td><img src="screenshots/forest2.png" width="250" alt="Forest Review View"/></td>
+    <td><img src="screenshots/forest3.png" width="250" alt="Forest Success View"/></td>
+  </tr>
+</table>
 
 ### Midnight Theme
-![Midnight Rating View](screenshots/midnight1.png)
-![Midnight Review View](screenshots/midnight2.png)
-![Midnight Success View](screenshots/midnight3.png)
+<table>
+  <tr>
+    <td><img src="screenshots/midnight1.png" width="250" alt="Midnight Rating View"/></td>
+    <td><img src="screenshots/midnight2.png" width="250" alt="Midnight Review View"/></td>
+    <td><img src="screenshots/midnight3.png" width="250" alt="Midnight Success View"/></td>
+  </tr>
+</table>
 
 ### Neon Theme
-![Neon Rating View](screenshots/neon1.png)
-![Neon Review View](screenshots/neon2.png)
-![Neon Success View](screenshots/neon3.png)
+<table>
+  <tr>
+    <td><img src="screenshots/neon1.png" width="250" alt="Neon Rating View"/></td>
+    <td><img src="screenshots/neon2.png" width="250" alt="Neon Review View"/></td>
+    <td><img src="screenshots/neon3.png" width="250" alt="Neon Success View"/></td>
+  </tr>
+</table>
 
 ## Additional Features
 

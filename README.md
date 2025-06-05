@@ -215,7 +215,7 @@ Contributions are welcome! If you find a bug or want to add a feature, please ra
 ```
 MIT License
 
-Copyright (c) 2024 [Your Name]
+Copyright (c) 2024 Subhadip Rudra
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

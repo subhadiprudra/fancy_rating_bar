@@ -158,9 +158,8 @@ class _FancyRatingBarState extends State<FancyRatingBar>
               child: Icon(
                 iconConfig.icon,
                 size: 40,
-                color: isSelected
-                    ? iconConfig.color
-                    : widget.theme.textMutedColor,
+                color:
+                    isSelected ? iconConfig.color : widget.theme.textMutedColor,
               ),
             ),
           ),
@@ -185,13 +184,11 @@ class _FancyRatingBarState extends State<FancyRatingBar>
             onExit: (_) => setState(() => hoveredRating = 0),
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 200),
-              transform: Matrix4.identity()
-                ..scaleByDouble(
-                  isSelected ? 1.25 : 1.0,
-                  isSelected ? 1.25 : 1.0,
-                  1.0,
-                  1.0,
-                ),
+              transform: Matrix4.diagonal3Values(
+                isSelected ? 1.25 : 1.0,
+                isSelected ? 1.25 : 1.0,
+                1.0,
+              ),
               child: Text(
                 emoji.emoji,
                 style: TextStyle(
@@ -276,7 +273,6 @@ class _FancyRatingBarState extends State<FancyRatingBar>
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 32),
-
         if (rating > 0) ...[
           AnimatedOpacity(
             opacity: rating > 0 ? 1.0 : 0.0,
@@ -303,9 +299,7 @@ class _FancyRatingBarState extends State<FancyRatingBar>
           ),
           const SizedBox(height: 24),
         ],
-
         widget.useEmojiRating ? _buildEmojiRating() : _buildRatingIcons(),
-
         const SizedBox(height: 16),
         Text(
           widget.useEmojiRating
@@ -313,7 +307,6 @@ class _FancyRatingBarState extends State<FancyRatingBar>
               : 'Click ${RatingIcons.configs[widget.ratingIconType]!.name.toLowerCase()} to rate',
           style: TextStyle(color: widget.theme.textMutedColor, fontSize: 12),
         ),
-
         if (rating > 0) ...[
           const SizedBox(height: 32),
           AnimatedOpacity(
@@ -350,8 +343,8 @@ class _FancyRatingBarState extends State<FancyRatingBar>
                               widget.mode == DialogMode.rating
                                   ? 'Submit'
                                   : showReviewStep
-                                  ? 'Next'
-                                  : 'Submit',
+                                      ? 'Next'
+                                      : 'Submit',
                               style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
@@ -433,7 +426,6 @@ class _FancyRatingBarState extends State<FancyRatingBar>
           ],
         ),
         const SizedBox(height: 24),
-
         Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
@@ -454,7 +446,7 @@ class _FancyRatingBarState extends State<FancyRatingBar>
               hintText: widget.mode == DialogMode.review
                   ? 'Share your thoughts and feedback...'
                   : EmojiRatings.placeholders[rating] ??
-                        EmojiRatings.placeholders[3]!,
+                      EmojiRatings.placeholders[3]!,
               hintStyle: TextStyle(color: widget.theme.textMutedColor),
               border: InputBorder.none,
               contentPadding: const EdgeInsets.all(16),
@@ -463,7 +455,6 @@ class _FancyRatingBarState extends State<FancyRatingBar>
           ),
         ),
         const SizedBox(height: 24),
-
         Row(
           children: [
             if (widget.mode == DialogMode.both) ...[
@@ -642,16 +633,14 @@ class _FancyRatingBarState extends State<FancyRatingBar>
                       ),
                     ),
                   ),
-
                   _buildProgressBar(),
-
                   AnimatedSwitcher(
                     duration: const Duration(milliseconds: 300),
                     child: submitted
                         ? _buildSuccessState()
                         : (step == 1 && showRatingStep)
-                        ? _buildRatingStep()
-                        : _buildReviewStep(),
+                            ? _buildRatingStep()
+                            : _buildReviewStep(),
                   ),
                 ],
               ),

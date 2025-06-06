@@ -60,11 +60,10 @@ packages:
   fancy_rating_bar:
     dependency: "direct main"
     description:
-      name: fancy_rating_bar
-      sha256: "84b1d6e031a611d5b512c4d5da7ce9e07c65ce7ecab1c914834a35e041754de3"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.3"
+      path: ".."
+      relative: true
+    source: path
+    version: "0.0.4+2"
   flutter:
     dependency: "direct main"
     description: flutter

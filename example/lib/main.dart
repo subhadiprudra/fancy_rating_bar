@@ -113,58 +113,56 @@ class _RatingDialogDemoState extends State<RatingDialogDemo> {
                 ),
               ),
               Expanded(
-                child: Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      const SizedBox(height: 48),
-                      Container(
-                        decoration: BoxDecoration(
-                          gradient: currentTheme.buttonGradient,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 48),
+                    Container(
+                      decoration: BoxDecoration(
+                        gradient: currentTheme.buttonGradient,
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: currentTheme.accentColor,
+                            blurRadius: 20,
+                            offset: const Offset(0, 10),
+                          ),
+                        ],
+                      ),
+                      child: Container(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTap: _showRatingDialog,
                           borderRadius: BorderRadius.circular(16),
-                          boxShadow: [
-                            BoxShadow(
-                              color: currentTheme.accentColor,
-                              blurRadius: 20,
-                              offset: const Offset(0, 10),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 32,
+                              vertical: 16,
                             ),
-                          ],
-                        ),
-                        child: Container(
-                          color: Colors.transparent,
-                          child: InkWell(
-                            onTap: _showRatingDialog,
-                            borderRadius: BorderRadius.circular(16),
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 32,
-                                vertical: 16,
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Icon(
-                                    Icons.auto_awesome,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  Icons.auto_awesome,
+                                  color: Colors.white,
+                                  size: 20,
+                                ),
+                                SizedBox(width: 12),
+                                Text(
+                                  'Leave a Review',
+                                  style: TextStyle(
                                     color: Colors.white,
-                                    size: 20,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600,
                                   ),
-                                  SizedBox(width: 12),
-                                  Text(
-                                    'Leave a Review',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ],

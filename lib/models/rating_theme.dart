@@ -161,11 +161,11 @@ class RatingThemes {
 
   // Update the list of all themes
   static List<RatingTheme> get allThemes => [
-    aurora,
-    sunset,
-    ocean,
-    forest,
-    midnight,
-    neon,
-  ];
+        aurora,
+        sunset,
+        ocean,
+        forest,
+        midnight,
+        neon,
+      ];
 }

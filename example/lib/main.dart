@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:fancy_rating_bar/fancy_rating_bar.dart';
-import 'package:fancy_rating_bar/models/dialog_mode.dart';
-import 'package:fancy_rating_bar/models/rating_icon.dart';
-import 'package:fancy_rating_bar/models/rating_theme.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,26 +33,22 @@ class RatingDialogDemo extends StatefulWidget {
 
 class _RatingDialogDemoState extends State<RatingDialogDemo> {
   RatingTheme currentTheme = RatingThemes.aurora;
-  RatingIconType ratingType = RatingIconType.stars;
-  bool useEmojis = false;
-  DialogMode dialogMode = DialogMode.both;
 
   void _showRatingDialog() {
-    showDialog(
-      context: context,
-      barrierDismissible: true,
-      builder: (context) => FancyRatingBar(
-        theme: currentTheme,
-        ratingIconType: ratingType,
-        useEmojiRating: useEmojis,
-        mode: dialogMode,
-        onSubmit: (data) async {
-          debugPrint(
-            'Rating submitted: $data',
-          ); // Changed from print to debugPrint
-          await Future.delayed(const Duration(milliseconds: 1500));
-        },
-      ),
+    FancyRatingBarParams fancyRatingBarParams = FancyRatingBarParams(
+      theme: currentTheme,
+      ratingIconType: RatingIconType.stars,
+      useEmojiRating: false,
+      playStoreUrl:
+          "https://play.google.com/store/apps/details?id=com.example.app",
+      appStoreUrl: "https://apps.apple.com/app/234567890",
+      testMode: true,
+    );
+    FancyRatingBar.of(context).handleAutomaticRating(
+      params: fancyRatingBarParams,
+      onSubmit: (response) {
+        debugPrint('Rating submitted: ${response.toJson()}');
+      },
     );
   }
 
@@ -63,14 +56,16 @@ class _RatingDialogDemoState extends State<RatingDialogDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        height: double.infinity,
         decoration: BoxDecoration(gradient: currentTheme.background),
         child: SafeArea(
-          child: Row(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.all(16),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     PopupMenuButton<RatingTheme>(
                       child: Container(
@@ -112,58 +107,56 @@ class _RatingDialogDemoState extends State<RatingDialogDemo> {
                   ],
                 ),
               ),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 48),
-                    Container(
-                      decoration: BoxDecoration(
-                        gradient: currentTheme.buttonGradient,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const SizedBox(height: 48),
+                  Container(
+                    decoration: BoxDecoration(
+                      gradient: currentTheme.buttonGradient,
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: [
+                        BoxShadow(
+                          color: currentTheme.accentColor,
+                          blurRadius: 20,
+                          offset: const Offset(0, 10),
+                        ),
+                      ],
+                    ),
+                    child: Container(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        onTap: _showRatingDialog,
                         borderRadius: BorderRadius.circular(16),
-                        boxShadow: [
-                          BoxShadow(
-                            color: currentTheme.accentColor,
-                            blurRadius: 20,
-                            offset: const Offset(0, 10),
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 32,
+                            vertical: 16,
                           ),
-                        ],
-                      ),
-                      child: Container(
-                        color: Colors.transparent,
-                        child: InkWell(
-                          onTap: _showRatingDialog,
-                          borderRadius: BorderRadius.circular(16),
-                          child: const Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 32,
-                              vertical: 16,
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(
-                                  Icons.auto_awesome,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.auto_awesome,
+                                color: Colors.white,
+                                size: 20,
+                              ),
+                              SizedBox(width: 12),
+                              Text(
+                                'Leave a Review',
+                                style: TextStyle(
                                   color: Colors.white,
-                                  size: 20,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
                                 ),
-                                SizedBox(width: 12),
-                                Text(
-                                  'Leave a Review',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
           ),

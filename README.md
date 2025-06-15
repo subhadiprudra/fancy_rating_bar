@@ -9,7 +9,6 @@ A beautiful, highly customizable Flutter rating dialog with stunning gradients, 
 ## 🎬 Flowchart
 
 ```mermaid
-flowchart TD
 graph TD
     A[App Launch] --> B{Session Counter Increment};
 

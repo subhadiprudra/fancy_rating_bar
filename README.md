@@ -133,16 +133,17 @@ Get powerful insights from your user feedback:
 
 ### 📊 FeedbackNest Dashboard
 
-<table>
-  <tr>
-    <td><img src="screenshots/feedbacknest_rating.jpg" width="400" alt="FeedbackNest Analytics Dashboard"/></td>
-    <td><img src="screenshots/feedbacknest_user_info_who_rated.jpg" width="400" alt="FeedbackNest User Profile Details"/></td>
-  </tr>
-  <tr>
-    <td align="center"><em>Comprehensive analytics with ratings overview, user metrics, and detailed feedback tracking</em></td>
-    <td align="center"><em>Deep user insights: install date, usage duration, session count, device info, and engagement metrics</em></td>
-  </tr>
-</table>
+<p align="center">
+  <img src="screenshots/feedbacknest_rating.jpg" width="600" alt="FeedbackNest Analytics Dashboard"/>
+</p>
+
+*Comprehensive analytics dashboard showing ratings overview, user metrics, and detailed feedback tracking with average rating, total reviews, and positive/negative sentiment analysis*
+
+<p align="center">
+  <img src="screenshots/feedbacknest_user_info_who_rated.jpg" width="600" alt="FeedbackNest User Profile Details"/>
+</p>
+
+*Deep user insights revealing install date, usage duration, session count, device information, and comprehensive engagement metrics for each user who provided feedback*
 
 **What you get with FeedbackNest:**
 - 📊 **Real-time Dashboard**: Average rating, total feedback count, positive/negative sentiment analysis

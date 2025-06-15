@@ -8,19 +8,20 @@ A beautiful, highly customizable Flutter rating dialog with stunning gradients, 
 
 ## 🎬 Flowchart
 ```mermaid
+```mermaid
 flowchart TD
     A[START] --> B[User completes a session]
     B --> C{Has user completed X sessions?}
     C -- No --> Z[Wait until X sessions]
     C -- Yes --> D[Show Rating Dialog]
-    D --> E[User selects rating (1-5)]
-    E --> F{Is rating ≥ 4?}
+    D --> E[User selects rating 1-5]
+    E --> F{Is rating ≥ 4}
     
     F -- Yes --> G[Ask to Rate on Play Store]
-    G --> H{Did user click "Rate"?}
+    G --> H{Did user click "Rate"}
     H -- Yes --> I[Open Play Store]
-    I --> J[Return to App & Show Thank You]
-    J --> K[Log stars + review to FeedbackNest]
+    I --> J[Return to App and Show Thank You]
+    J --> K[Log stars and review to FeedbackNest]
     K --> L[Developer views in FeedbackNest Dashboard]
 
     H -- No (Skip) --> M[Schedule to re-ask after Y sessions]
@@ -28,7 +29,7 @@ flowchart TD
 
     F -- No --> N[Show Review Dialog for feedback]
     N --> O[User writes a review]
-    O --> P[Log review & rating to FeedbackNest]
+    O --> P[Log review and rating to FeedbackNest]
     P --> L
 ```
 

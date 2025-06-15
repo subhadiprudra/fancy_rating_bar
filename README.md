@@ -152,6 +152,11 @@ Get powerful insights from your user feedback:
 - 📱 **Device Intelligence**: Platform, version, device model, and location data
 - 🎯 **Smart Filtering**: Sort and filter feedback by user, rating, platform, date, and more
 
+### Init Feedbacknest
+```dart
+Feedbacknest.init("your_api_key", userIdentifier: "user_123");
+```
+### Log Rating And Review In Feedbacknest
 ```dart
 // Simple integration - FeedbackNest handles the rest!
 Feedbacknest.submitRatingAndReview(

@@ -180,8 +180,8 @@ Feedbacknest.submitRatingAndReview(
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `threshold` | `int` | `3` | Number of app launches before showing the dialog for the first time |
-| `showAgainThreshold` | `int` | `10` | Number of launches after which to show dialog again if previously skipped |
+| `threshold` | `int` | `3` | Number of handleAutomaticRating() function call before showing the dialog for the first time |
+| `showAgainThreshold` | `int` | `10` | Number handleAutomaticRating() after which to show dialog again if previously skipped |
 | `testMode` | `bool` | `false` | If `true`, dialog shows every time (for development/testing) |
 
 ### Visual & Interaction

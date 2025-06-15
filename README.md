@@ -6,32 +6,30 @@
 
 A beautiful, highly customizable Flutter rating dialog with stunning gradients, animations, and intelligent automatic rating logic. Perfect for collecting user feedback and app store ratings.
 
-
+## Auto Rating Flow
 
 ```mermaid
 flowchart TD
-    A[App Launched] --> B{Session Count >= X?}
-    B -- No --> A1[Do Nothing]
-    B -- Yes --> C[Show Rating Dialog]
-
-    C --> D{User Rated}
-    D --> E[Rating > 3]
-    D --> F[Rating <= 3]
-
-    E --> G[Ask to Rate on Play Store]
-    G --> H{User Rated on Play Store?}
-    H -- Yes --> I[Show Thank You Message]
-    I --> J[Log Rating to FeedbackNest]
-    J --> K[Open Store Review in FeedbackNest]
-    H -- Skip --> L[Ask Again After Y Sessions]
-
-    F --> M[Show Review Dialog\n(Why didn't you like the app?)]
-    M --> N[Log Rating & Review to FeedbackNest]
-
-    K --> Z[Developer Views Ratings\n& Reviews in FeedbackNest Dashboard]
-    L --> Z
-    N --> Z
-
+    A[Start] --> B{userSessions > x?}
+    B -->|No| C[End - No Action]
+    B -->|Yes| D[Show Rating Dialog]
+    D --> E{Rating > 3?}
+    E -->|No| F[Show Feedback Form]
+    F --> G[Send Feedback to FeedbackNest]
+    G --> H[End - Feedback Collected]
+    E -->|Yes| I[Ask User to Rate on App Store/Play Store]
+    I --> J{User Rated?}
+    J -->|Yes| K[Show Thank You Message]
+    K --> L[Send Feedback to FeedbackNest]
+    L --> M[End - Success]
+    J -->|No| N[Increase threshold: x = x + frequency]
+    N --> O[End - Will Show Later]
+    
+    style A fill:#e1f5fe
+    style C fill:#f3e5f5
+    style H fill:#fff3e0
+    style M fill:#e8f5e8
+    style O fill:#fff3e0
 ```
 
 

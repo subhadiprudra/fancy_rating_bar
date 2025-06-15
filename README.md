@@ -9,7 +9,7 @@ A beautiful, highly customizable Flutter rating dialog with stunning gradients, 
 ## 🎬 Flowchart
 
 ```mermaid
-chart TD
+flowchart TD
     A[App Launched] --> B{Session Count >= X?}
     B -- No --> A1[Do Nothing]
     B -- Yes --> C[Show Rating Dialog]
@@ -25,10 +25,10 @@ chart TD
     J --> K[Open Store Review in FeedbackNest]
     H -- Skip --> L[Ask Again After Y Sessions]
 
-    F --> M[Show Review Dialog (Why didn't you like it?)]
+    F --> M[Show Review Dialog<br>(Why didn't you like it?)]
     M --> N[Log Rating & Review to FeedbackNest]
 
-    K --> Z[Developer Views Data in FeedbackNest Dashboard]
+    K --> Z[Developer Views Ratings<br>& Reviews in FeedbackNest Dashboard]
     L --> Z
     N --> Z
 ```

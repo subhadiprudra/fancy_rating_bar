@@ -6,44 +6,43 @@
 
 A beautiful, highly customizable Flutter rating dialog with stunning gradients, animations, and intelligent automatic rating logic. Perfect for collecting user feedback and app store ratings.
 
-## Auto Rating Flow
+# 🚀 App Rating Flow
 
-```mermaid
-flowchart TD
-    A[🚀 Start] --> B{👥 userSessions > threshold?}
-    B -->|❌ No| C[🛑 End - No Action]
-    B -->|✅ Yes| D[⭐ Show Rating Dialog]
-    D --> E{⭐ Rating > 3?}
-    E -->|👎 No| F[📝 Show Feedback Form]
-    F --> G[📤 Send Feedback to FeedbackNest]
-    G --> H[✅ End - Feedback Collected]
-    E -->|👍 Yes| I[🏪 Ask User to Rate on App Store/Play Store]
-    I --> J{📱 User Rated?}
-    J -->|✅ Yes| K[🙏 Show Thank You Message]
-    K --> L[📊 Send Feedback to FeedbackNest]
-    L --> M[🎉 End - Success]
-    J -->|❌ No| N[⏰ Increase threshold: x = x + showAgainThreshold]
-    N --> O[📅 End - Will Show Later]
+This flowchart describes the logic for when and how to show app rating prompts to users.
 
-    %% Enhanced Styling
-    classDef startStyle fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff,font-weight:bold
-    classDef decisionStyle fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff,font-weight:bold
-    classDef actionStyle fill:#FF9800,stroke:#E65100,stroke-width:2px,color:#fff,font-weight:bold
-    classDef endSuccessStyle fill:#4CAF50,stroke:#2E7D32,stroke-width:2px,color:#fff,font-weight:bold
-    classDef endNeutralStyle fill:#9E9E9E,stroke:#424242,stroke-width:2px,color:#fff,font-weight:bold
-    classDef feedbackStyle fill:#9C27B0,stroke:#4A148C,stroke-width:2px,color:#fff,font-weight:bold
-    classDef delayStyle fill:#FF5722,stroke:#BF360C,stroke-width:2px,color:#fff,font-weight:bold
+## Flow Overview
 
-    %% Apply styles
-    class A startStyle
-    class B,E,J decisionStyle
-    class D,F,I,K actionStyle
-    class M,H endSuccessStyle
-    class C endNeutralStyle
-    class G,L feedbackStyle
-    class N,O delayStyle
 ```
-
+🚀 START
+    ↓
+👥 Check: userSessions > threshold?
+    ↓                    ↓
+   ❌ NO               ✅ YES
+    ↓                    ↓
+🛑 END               ⭐ Show Rating Dialog
+No Action                ↓
+                    ⭐ Check: Rating > 3?
+                         ↓           ↓
+                       👎 NO       👍 YES
+                         ↓           ↓
+                   📝 Show         🏪 Ask User to Rate
+                   Feedback Form    on App Store/Play Store
+                         ↓           ↓
+                   📤 Send to      📱 Check: User Rated?
+                   FeedbackNest         ↓           ↓
+                         ↓           ✅ YES       ❌ NO
+                   ✅ END               ↓           ↓
+                   Feedback         🙏 Show       ⏰ Increase threshold:
+                   Collected        Thank You     x = x + showAgainThreshold
+                                   Message            ↓
+                                       ↓         📅 END
+                                   📊 Send       Will Show Later
+                                   Feedback to
+                                   FeedbackNest
+                                       ↓
+                                   🎉 END
+                                   Success
+```
 
 ## 🎬 Demo Flow
 
@@ -77,7 +76,7 @@ flowchart TD
 **Add dependency:**
 ```yaml
 dependencies:
-  fancy_rating_bar: ^0.0.7
+  fancy_rating_bar: ^0.0.8
   feedbacknest_core: ^0.0.6  # Optional: For analytics & insights
 ```
 

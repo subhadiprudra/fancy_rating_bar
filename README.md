@@ -9,43 +9,28 @@ A beautiful, highly customizable Flutter rating dialog with stunning gradients, 
 ## 🎬 Flowchart
 
 ```mermaid
-graph TD
-    A[App Launch] --> B{Session Counter Increment};
+flowchart TD
+    A[App Launched] --> B{Session Count >= X?}
+    B -- No --> A1[Do Nothing]
+    B -- Yes --> C[Show Rating Dialog]
 
-    B --> C{Is Session Count = X?};
+    C --> D{User Rated}
+    D --> E[Rating > 3]
+    D --> F[Rating <= 3]
 
-    C -- No --> A;
-    C -- Yes --> D[Show Rating Dialog];
+    E --> G[Ask to Rate on Play Store]
+    G --> H{User Rated on Play Store?}
+    H -- Yes --> I[Show Thank You Message]
+    I --> J[Log Rating to FeedbackNest]
+    J --> K[Open Store Review in FeedbackNest]
+    H -- Skip --> L[Ask Again After Y Sessions]
 
-    D --> E{User Rated?};
+    F --> M[Show Review Dialog (Why didn't you like it?)]
+    M --> N[Log Rating & Review to FeedbackNest]
 
-    E -- No (Skipped) --> F{Is Rating Dialog Shown for &gt;3 and User Skipped?};
-    E -- Yes --> G{Rating Value?};
-
-    F -- Yes --> H{Reset Session Counter to 0<br>Increment Skip Counter<br>Show Rating Dialog after Y sessions};
-    F -- No --> A;
-
-    G -- Rating &gt; 3 --> I{Ask User to Rate on Play Store};
-    G -- Rating &lt; 3 --> J[Show Review Dialog to Write Review];
-    G -- Rating = 3 --> K[Log Rating to FeedbackNest];
-
-    I --> L{User Rated on Play Store?};
-
-    L -- Yes --> M[Show Thank You Message];
-    L -- No --> N[Reset Session Counter to 0<br>Increment Skip Counter<br>Show Rating Dialog after Y sessions];
-
-    M --> O[Log: User Rated X Stars to FeedbackNest];
-    M --> P[Log: Open Store to Review in FeedbackNest API];
-
-    J --> Q[User Writes Review];
-    Q --> R[Log Rating and Review to FeedbackNest];
-
-    O --> S[Developer Can View Ratings and Reviews in FeedbackNest Dashboard];
-    P --> S;
-    K --> S;
-    R --> S;
-    N --> A;
-    H --> A;
+    K --> Z[Developer Views Data in FeedbackNest Dashboard]
+    L --> Z
+    N --> Z
 ```
 
 ## 🎬 Demo Flow

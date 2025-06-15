@@ -7,7 +7,7 @@
 A beautiful, highly customizable Flutter rating dialog with stunning gradients, animations, and intelligent automatic rating logic. Perfect for collecting user feedback and app store ratings.
 
 ## 🎬 Flowchart
-```mermaid
+
 ```mermaid
 flowchart TD
     A[START] --> B[User completes a session]

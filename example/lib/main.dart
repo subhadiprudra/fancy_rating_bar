@@ -42,7 +42,7 @@ class _RatingDialogDemoState extends State<RatingDialogDemo> {
       ratingIconType: RatingIconType.stars,
       useEmojiRating: false,
       playStoreUrl:
-          "https://play.google.com/store/apps/details?id=com.example.app",
+          "https://play.google.com/store/apps/details?id=com.ludo.king&hl=en_IN",
       appStoreUrl: "https://apps.apple.com/app/234567890",
       testMode: true,
     );

@@ -77,8 +77,8 @@ flowchart TD
 **Add dependency:**
 ```yaml
 dependencies:
-  fancy_rating_bar: ^0.0.6
-  feedbacknest_core: ^1.0.0  # Optional: For analytics & insights
+  fancy_rating_bar: ^0.0.7
+  feedbacknest_core: ^0.0.6  # Optional: For analytics & insights
 ```
 
 **Basic usage:**

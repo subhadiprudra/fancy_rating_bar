@@ -1,6 +1,6 @@
 name: fancy_rating_bar
 description: "A beautiful, highly customizable Flutter rating widget with stunning gradients, animations, and glassmorphic effects."
-version: 0.0.6
+version: 0.0.7
 homepage: https://feedbacknest.app
 repository: https://github.com/subhadiprudra/fancy_rating_bar
 license: MIT

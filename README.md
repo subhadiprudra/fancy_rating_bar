@@ -131,6 +131,26 @@ Get powerful insights from your user feedback:
 - **⚡ Real-time Alerts**: Get notified of negative feedback to respond quickly
 - **📧 Export & Reporting**: Generate reports for stakeholders and team analysis
 
+### 📊 FeedbackNest Dashboard
+
+<table>
+  <tr>
+    <td><img src="screenshots/feedbacknest_rating.jpg" width="400" alt="FeedbackNest Analytics Dashboard"/></td>
+    <td><img src="screenshots/feedbacknest_user_info_who_rated.jpg" width="400" alt="FeedbackNest User Profile Details"/></td>
+  </tr>
+  <tr>
+    <td align="center"><em>Comprehensive analytics with ratings overview, user metrics, and detailed feedback tracking</em></td>
+    <td align="center"><em>Deep user insights: install date, usage duration, session count, device info, and engagement metrics</em></td>
+  </tr>
+</table>
+
+**What you get with FeedbackNest:**
+- 📊 **Real-time Dashboard**: Average rating, total feedback count, positive/negative sentiment analysis
+- 👤 **User Profiles**: Track individual user journeys, app usage patterns, and engagement metrics
+- ⏱️ **Usage Analytics**: Install date, active days, total sessions, sessions per day
+- 📱 **Device Intelligence**: Platform, version, device model, and location data
+- 🎯 **Smart Filtering**: Sort and filter feedback by user, rating, platform, date, and more
+
 ```dart
 // Simple integration - FeedbackNest handles the rest!
 Feedbacknest.submitRatingAndReview(

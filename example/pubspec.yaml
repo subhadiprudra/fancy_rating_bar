@@ -33,6 +33,7 @@ dependencies:
     
   fancy_rating_bar: 
     path: ../
+  feedbacknest_core: ^0.0.6
 
     
 

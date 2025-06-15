@@ -49,6 +49,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
+  device_info_plus:
+    dependency: transitive
+    description:
+      name: device_info_plus
+      sha256: "0c6396126421b590089447154c5f98a5de423b70cfb15b1578fd018843ee6f53"
+      url: "https://pub.dev"
+    source: hosted
+    version: "11.4.0"
+  device_info_plus_platform_interface:
+    dependency: transitive
+    description:
+      name: device_info_plus_platform_interface
+      sha256: "0b04e02b30791224b31969eb1b50d723498f402971bff3630bca2ba839bd1ed2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.0.2"
   fake_async:
     dependency: transitive
     description:
@@ -63,6 +79,14 @@ packages:
       path: ".."
       relative: true
     source: path
+    version: "0.0.6"
+  feedbacknest_core:
+    dependency: "direct main"
+    description:
+      name: feedbacknest_core
+      sha256: "8d9274208c189d9704ebc6a412f0229c1fe4a9b95a528810c90cfd46acf6c01b"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.0.6"
   ffi:
     dependency: transitive
@@ -103,6 +127,22 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  http:
+    dependency: transitive
+    description:
+      name: http
+      sha256: "2c11f3f94c687ee9bad77c171151672986360b2b001d109814ee7140b2cf261b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.4.0"
+  http_parser:
+    dependency: transitive
+    description:
+      name: http_parser
+      sha256: "178d74305e7866013777bab2c3d8726205dc5a4dd935297175b19a23a2e66571"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.1.2"
   leak_tracker:
     dependency: transitive
     description:
@@ -159,6 +199,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.16.0"
+  package_info_plus:
+    dependency: transitive
+    description:
+      name: package_info_plus
+      sha256: "7976bfe4c583170d6cdc7077e3237560b364149fcd268b5f53d95a991963b191"
+      url: "https://pub.dev"
+    source: hosted
+    version: "8.3.0"
+  package_info_plus_platform_interface:
+    dependency: transitive
+    description:
+      name: package_info_plus_platform_interface
+      sha256: "6c935fb612dff8e3cc9632c2b301720c77450a126114126ffaafe28d2e87956c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.0"
   path:
     dependency: transitive
     description:
@@ -316,6 +372,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.6"
+  typed_data:
+    dependency: transitive
+    description:
+      name: typed_data
+      sha256: f9049c039ebfeb4cf7a7104a675823cd72dba8297f264b6637062516699fa006
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.4.0"
   url_launcher:
     dependency: transitive
     description:
@@ -404,6 +468,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.1"
+  win32:
+    dependency: transitive
+    description:
+      name: win32
+      sha256: "66814138c3562338d05613a6e368ed8cfb237ad6d64a9e9334be3f309acfca03"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.14.0"
+  win32_registry:
+    dependency: transitive
+    description:
+      name: win32_registry
+      sha256: "6f1b564492d0147b330dd794fee8f512cec4977957f310f9951b5f9d83618dae"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.0"
   xdg_directories:
     dependency: transitive
     description:

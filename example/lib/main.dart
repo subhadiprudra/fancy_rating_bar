@@ -1,8 +1,10 @@
 import 'package:fancy_rating_bar/fancy_rating_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:feedbacknest_core/feedbacknest.dart';
 
 void main() {
   runApp(const MyApp());
+  Feedbacknest.init("apiKey", userIdentifier: "12345");
 }
 
 class MyApp extends StatelessWidget {
@@ -47,7 +49,10 @@ class _RatingDialogDemoState extends State<RatingDialogDemo> {
     FancyRatingBar.of(context).handleAutomaticRating(
       params: fancyRatingBarParams,
       onSubmit: (response) {
-        debugPrint('Rating submitted: ${response.toJson()}');
+        Feedbacknest.submitRatingAndReview(
+          rating: response.rating,
+          review: response.message ?? response.type.name,
+        );
       },
     );
   }

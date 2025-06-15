@@ -9,7 +9,7 @@ A beautiful, highly customizable Flutter rating dialog with stunning gradients, 
 ## 🎬 Flowchart
 
 ```mermaid
-flowchart TD
+chart TD
     A[App Launched] --> B{Session Count >= X?}
     B -- No --> A1[Do Nothing]
     B -- Yes --> C[Show Rating Dialog]

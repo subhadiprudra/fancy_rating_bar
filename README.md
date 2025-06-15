@@ -6,6 +6,14 @@
 
 A beautiful, highly customizable Flutter rating dialog with stunning gradients, animations, and intelligent automatic rating logic. Perfect for collecting user feedback and app store ratings.
 
+## 🎬 Demo Flow
+
+<p align="center">
+  <img src="screenshots/rating_dialog_flow.gif" width="300" alt="Fancy Rating Bar Flow Demo"/>
+</p>
+
+*Complete rating dialog flow showing the smart routing: rating → review (for low ratings) or app store (for high ratings) → thank you*
+
 > 💡 **Pro Tip**: Combine with [FeedbackNest Core](https://pub.dev/packages/feedbacknest_core) to automatically collect, analyze, and get insights from user ratings and reviews!
 
 ## ✨ Features
@@ -37,6 +45,10 @@ void main() {
   runApp(MyApp());
   Feedbacknest.init("your_api_key", userIdentifier: "user_123");
 }
+//
+[Get Api Key →](https://feedbacknest.app)
+[See more →](https://pub.dev/packages/feedbacknest_core)
+
 
 // Show rating dialog
 void _showRating() {
@@ -78,31 +90,102 @@ Get powerful insights from your user feedback:
 Feedbacknest.submitRatingAndReview(
   rating: response.rating,
   review: response.message ?? '',
-  metadata: {'source': 'mobile_app', 'version': '1.0.0'},
 );
 ```
 
 [Learn more about FeedbackNest →](https://feedbacknest.app)
+[See more →](https://pub.dev/packages/feedbacknest_core)
 
-## 🎨 Configuration
+## 🎨 FancyRatingBarParams Configuration
 
-**Themes**: `aurora`, `sunset`, `ocean`, `forest`, `midnight`, `neon`
+### Required Parameters
 
-**Rating Icons**: `stars`, `hearts`, `thumbs`, `lightning`, `coffee`, `music`, `smile`, `award`, `gift`
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `theme` | `RatingTheme` | **Required**. Visual theme for the dialog |
 
-**Modes**: `DialogMode.rating`, `DialogMode.review`, `DialogMode.both`
+### Automatic Rating Logic
 
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `threshold` | `int` | `3` | Number of app launches before showing the dialog for the first time |
+| `showAgainThreshold` | `int` | `10` | Number of launches after which to show dialog again if previously skipped |
+| `testMode` | `bool` | `false` | If `true`, dialog shows every time (for development/testing) |
+
+### Visual & Interaction
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `ratingIconType` | `RatingIconType` | `stars` | Type of rating icons: `stars`, `hearts`, `thumbs`, `lightning`, `coffee`, `music`, `smile`, `award`, `gift` |
+| `useEmojiRating` | `bool` | `false` | Use emoji-based rating instead of icons |
+| `mode` | `DialogMode` | `rating` | Dialog flow: `rating`, `review`, or `both` |
+
+### Custom Text Content
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `title` | `String` | `'Rate Your Experience'` | Main title for rating step |
+| `subtitle` | `String` | `'How was your overall experience?'` | Subtitle for rating step |
+| `reviewTitle` | `String` | `'Tell us more!'` | Title for review step |
+| `reviewSubtitle` | `String` | `'Share your thoughts (optional)'` | Subtitle for review step |
+| `storeRatingTitle` | `String` | `'Show Some Love! ❤️'` | Title for store rating prompt |
+| `storeRatingSubtitle` | `String` | `'Help others discover our app...'` | Subtitle for store rating prompt |
+| `thankYouTitle` | `String` | `'Thank You for Rating Us! 🎉'` | Title for thank you screen |
+| `thankYouSubtitle` | `String` | `'We appreciate you taking...'` | Subtitle for thank you screen |
+
+### App Store Integration
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `playStoreUrl` | `String` | `''` | Google Play Store URL for your app |
+| `appStoreUrl` | `String` | `''` | Apple App Store URL for your app |
+
+### Behavior Settings
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `maxLength` | `int` | `500` | Maximum characters allowed in review text |
+| `thankYouDuration` | `int` | `4` | Duration (seconds) to show thank you message |
+
+### Available Themes
 ```dart
-// Complete customization example
+RatingThemes.aurora     // Purple and pink gradients
+RatingThemes.sunset     // Orange and red gradients  
+RatingThemes.ocean      // Blue and cyan gradients
+RatingThemes.forest     // Green and emerald gradients
+RatingThemes.midnight   // Dark and elegant gradients
+RatingThemes.neon       // Vibrant neon gradients
+```
+
+### Complete Example
+```dart
 FancyRatingBarParams params = FancyRatingBarParams(
+  // Required
   theme: RatingThemes.neon,
+  
+  // Automatic Logic
+  threshold: 5,              // Show after 5 app launches
+  showAgainThreshold: 15,    // Show again after 15 launches if skipped
+  testMode: false,           // Set to true for testing
+  
+  // Visual & Interaction
   ratingIconType: RatingIconType.hearts,
   useEmojiRating: false,
   mode: DialogMode.both,
-  threshold: 5,              // Show after 5 launches
-  showAgainThreshold: 15,    // Show again after 15 if skipped
-  playStoreUrl: "your_play_store_url",
-  appStoreUrl: "your_app_store_url",
+  
+  // Custom Text
+  title: 'How do you like our app?',
+  subtitle: 'Your feedback helps us improve',
+  reviewTitle: 'Share Your Thoughts',
+  reviewSubtitle: 'Tell us what you think',
+  
+  // Store URLs
+  playStoreUrl: "https://play.google.com/store/apps/details?id=your.app.id",
+  appStoreUrl: "https://apps.apple.com/app/your-app-id",
+  
+  // Behavior
+  maxLength: 300,
+  thankYouDuration: 3,
 );
 ```
 

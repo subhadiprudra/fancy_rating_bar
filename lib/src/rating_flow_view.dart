@@ -349,7 +349,7 @@ class _RatingFlowViewState extends State<RatingFlowView>
           widget.title,
           style: TextStyle(
             color: widget.theme.textColor,
-            fontSize: 24,
+            fontSize: 22,
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
@@ -359,7 +359,7 @@ class _RatingFlowViewState extends State<RatingFlowView>
           widget.subtitle,
           style: TextStyle(
             color: widget.theme.textSecondaryColor,
-            fontSize: 16,
+            fontSize: 13,
           ),
           textAlign: TextAlign.center,
         ),
@@ -374,7 +374,7 @@ class _RatingFlowViewState extends State<RatingFlowView>
                   widget.useEmojiRating
                       ? EmojiRatings.ratings[rating]!.emoji
                       : EmojiRatings.ratings[rating]!.emoji,
-                  style: const TextStyle(fontSize: 64),
+                  style: const TextStyle(fontSize: 50),
                 ),
                 const SizedBox(height: 8),
                 Text(
@@ -432,7 +432,7 @@ class _RatingFlowViewState extends State<RatingFlowView>
                           'Next',
                           style: const TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: 13,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -481,7 +481,7 @@ class _RatingFlowViewState extends State<RatingFlowView>
           widget.storeRatingTitle,
           style: TextStyle(
             color: widget.theme.textColor,
-            fontSize: 24,
+            fontSize: 22,
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
@@ -491,22 +491,22 @@ class _RatingFlowViewState extends State<RatingFlowView>
           widget.storeRatingSubtitle,
           style: TextStyle(
             color: widget.theme.textSecondaryColor,
-            fontSize: 16,
+            fontSize: 13,
           ),
           textAlign: TextAlign.center,
         ),
-        const SizedBox(height: 32),
+        const SizedBox(height: 15),
         // Large emoji display
         Text(
           '⭐',
-          style: const TextStyle(fontSize: 80),
+          style: const TextStyle(fontSize: 50),
         ),
-        const SizedBox(height: 24),
+        const SizedBox(height: 15),
         Text(
           'Your $rating-star rating means a lot to us!',
           style: TextStyle(
             color: widget.theme.textColor,
-            fontSize: 18,
+            fontSize: 15,
             fontWeight: FontWeight.w600,
           ),
           textAlign: TextAlign.center,
@@ -591,9 +591,9 @@ class _RatingFlowViewState extends State<RatingFlowView>
               widget.useEmojiRating
                   ? EmojiRatings.ratings[rating]?.emoji ?? '😊'
                   : EmojiRatings.ratings[rating]?.emoji ?? '😊',
-              style: const TextStyle(fontSize: 32),
+              style: const TextStyle(fontSize: 25),
             ),
-            const SizedBox(width: 12),
+            const SizedBox(width: 9),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -601,7 +601,7 @@ class _RatingFlowViewState extends State<RatingFlowView>
                   widget.reviewTitle,
                   style: TextStyle(
                     color: widget.theme.textColor,
-                    fontSize: 24,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -609,7 +609,7 @@ class _RatingFlowViewState extends State<RatingFlowView>
                   widget.reviewSubtitle,
                   style: TextStyle(
                     color: widget.theme.textSecondaryColor,
-                    fontSize: 16,
+                    fontSize: 12,
                   ),
                 ),
               ],
@@ -636,9 +636,10 @@ class _RatingFlowViewState extends State<RatingFlowView>
             decoration: InputDecoration(
               hintText: EmojiRatings.placeholders[rating] ??
                   EmojiRatings.placeholders[3]!,
-              hintStyle: TextStyle(color: widget.theme.textMutedColor),
+              hintStyle:
+                  TextStyle(color: widget.theme.textMutedColor, fontSize: 12),
               border: InputBorder.none,
-              contentPadding: const EdgeInsets.all(16),
+              contentPadding: const EdgeInsets.all(10),
               counterStyle: TextStyle(color: widget.theme.textMutedColor),
             ),
           ),
@@ -882,9 +883,9 @@ class _RatingFlowViewState extends State<RatingFlowView>
     return Dialog(
       backgroundColor: Colors.transparent,
       child: Container(
-        constraints: const BoxConstraints(maxWidth: 400),
+        //constraints: const BoxConstraints(maxWidth: 500),
         decoration: BoxDecoration(
-          gradient: widget.theme.background.scale(0.9),
+          gradient: widget.theme.background.scale(0.7),
           borderRadius: BorderRadius.circular(24),
           boxShadow: [
             BoxShadow(
@@ -899,7 +900,7 @@ class _RatingFlowViewState extends State<RatingFlowView>
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
             child: Padding(
-              padding: const EdgeInsets.all(32),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [

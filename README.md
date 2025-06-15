@@ -6,8 +6,7 @@
 
 A beautiful, highly customizable Flutter rating dialog with stunning gradients, animations, and intelligent automatic rating logic. Perfect for collecting user feedback and app store ratings.
 
-<details> 
-<summary>📈 Click to view Mermaid Flowchart Markdown<summary>
+
 
 ```mermaid
 flowchart TD
@@ -34,7 +33,7 @@ flowchart TD
     N --> Z
 
 ```
-</details>
+
 
 ## 🎬 Demo Flow
 

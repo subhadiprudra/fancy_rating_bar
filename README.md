@@ -6,6 +6,32 @@
 
 A beautiful, highly customizable Flutter rating dialog with stunning gradients, animations, and intelligent automatic rating logic. Perfect for collecting user feedback and app store ratings.
 
+## 🎬 Flowchart
+```mermaid
+flowchart TD
+    A[START] --> B[User completes a session]
+    B --> C{Has user completed X sessions?}
+    C -- No --> Z[Wait until X sessions]
+    C -- Yes --> D[Show Rating Dialog]
+    D --> E[User selects rating (1-5)]
+    E --> F{Is rating ≥ 4?}
+    
+    F -- Yes --> G[Ask to Rate on Play Store]
+    G --> H{Did user click "Rate"?}
+    H -- Yes --> I[Open Play Store]
+    I --> J[Return to App & Show Thank You]
+    J --> K[Log stars + review to FeedbackNest]
+    K --> L[Developer views in FeedbackNest Dashboard]
+
+    H -- No (Skip) --> M[Schedule to re-ask after Y sessions]
+    M --> L
+
+    F -- No --> N[Show Review Dialog for feedback]
+    N --> O[User writes a review]
+    O --> P[Log review & rating to FeedbackNest]
+    P --> L
+```
+
 ## 🎬 Demo Flow
 
 <p align="center">
@@ -13,6 +39,13 @@ A beautiful, highly customizable Flutter rating dialog with stunning gradients, 
 </p>
 
 *Complete rating dialog flow showing the smart routing: rating → review (for low ratings) or app store (for high ratings) → thank you*
+
+## 🎬 Themes
+
+<p align="center">
+  <img src="screenshots/themes.gif" width="300" alt="Fancy Rating Bar Flow Demo"/>
+</p>
+
 
 > 💡 **Pro Tip**: Combine with [FeedbackNest Core](https://pub.dev/packages/feedbacknest_core) to automatically collect, analyze, and get insights from user ratings and reviews!
 

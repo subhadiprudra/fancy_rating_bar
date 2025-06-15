@@ -10,27 +10,38 @@ A beautiful, highly customizable Flutter rating dialog with stunning gradients, 
 
 ```mermaid
 flowchart TD
-    A[Start] --> B{userSessions > threshold?}
-    B -->|No| C[End - No Action]
-    B -->|Yes| D[Show Rating Dialog]
-    D --> E{Rating > 3?}
-    E -->|No| F[Show Feedback Form]
-    F --> G[Send Feedback to FeedbackNest]
-    G --> H[End - Feedback Collected]
-    E -->|Yes| I[Ask User to Rate on App Store/Play Store]
-    I --> J{User Rated?}
-    J -->|Yes| K[Show Thank You Message]
-    K --> L[Send Feedback to FeedbackNest]
-    L --> M[End - Success]
-    J -->|No| N[Increase threshold: x = x + showAgainThreshold]
-    N --> O[End - Will Show Later]
-    
-    style A fill:#e1f5fe
-    style C fill:#f3e5f5
-    style H fill:#fff3e0
-    style M fill:#e8f5e8
-    style O fill:#fff3e0
-    style L fill:#fff3e0
+    A[🚀 Start] --> B{👥 userSessions > threshold?}
+    B -->|❌ No| C[🛑 End - No Action]
+    B -->|✅ Yes| D[⭐ Show Rating Dialog]
+    D --> E{⭐ Rating > 3?}
+    E -->|👎 No| F[📝 Show Feedback Form]
+    F --> G[📤 Send Feedback to FeedbackNest]
+    G --> H[✅ End - Feedback Collected]
+    E -->|👍 Yes| I[🏪 Ask User to Rate on App Store/Play Store]
+    I --> J{📱 User Rated?}
+    J -->|✅ Yes| K[🙏 Show Thank You Message]
+    K --> L[📊 Send Feedback to FeedbackNest]
+    L --> M[🎉 End - Success]
+    J -->|❌ No| N[⏰ Increase threshold: x = x + showAgainThreshold]
+    N --> O[📅 End - Will Show Later]
+
+    %% Enhanced Styling
+    classDef startStyle fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff,font-weight:bold
+    classDef decisionStyle fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff,font-weight:bold
+    classDef actionStyle fill:#FF9800,stroke:#E65100,stroke-width:2px,color:#fff,font-weight:bold
+    classDef endSuccessStyle fill:#4CAF50,stroke:#2E7D32,stroke-width:2px,color:#fff,font-weight:bold
+    classDef endNeutralStyle fill:#9E9E9E,stroke:#424242,stroke-width:2px,color:#fff,font-weight:bold
+    classDef feedbackStyle fill:#9C27B0,stroke:#4A148C,stroke-width:2px,color:#fff,font-weight:bold
+    classDef delayStyle fill:#FF5722,stroke:#BF360C,stroke-width:2px,color:#fff,font-weight:bold
+
+    %% Apply styles
+    class A startStyle
+    class B,E,J decisionStyle
+    class D,F,I,K actionStyle
+    class M,H endSuccessStyle
+    class C endNeutralStyle
+    class G,L feedbackStyle
+    class N,O delayStyle
 ```
 
 

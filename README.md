@@ -26,12 +26,13 @@ flowchart TD
     J --> K[Open Store Review in FeedbackNest]
     H -- Skip --> L[Ask Again After Y Sessions]
 
-    F --> M[Show Review Dialog<br>(Why didn't you like it?)]
+    F --> M[Show Review Dialog\n(Why didn't you like the app?)]
     M --> N[Log Rating & Review to FeedbackNest]
 
-    K --> Z[Developer Views Ratings<br>& Reviews in FeedbackNest Dashboard]
+    K --> Z[Developer Views Ratings\n& Reviews in FeedbackNest Dashboard]
     L --> Z
     N --> Z
+
 ```
 </details>
 

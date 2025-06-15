@@ -10,7 +10,7 @@ A beautiful, highly customizable Flutter rating dialog with stunning gradients, 
 
 ```mermaid
 flowchart TD
-    A[Start] --> B{userSessions > x?}
+    A[Start] --> B{userSessions > threshold?}
     B -->|No| C[End - No Action]
     B -->|Yes| D[Show Rating Dialog]
     D --> E{Rating > 3?}
@@ -22,7 +22,7 @@ flowchart TD
     J -->|Yes| K[Show Thank You Message]
     K --> L[Send Feedback to FeedbackNest]
     L --> M[End - Success]
-    J -->|No| N[Increase threshold: x = x + frequency]
+    J -->|No| N[Increase threshold: x = x + showAgainThreshold]
     N --> O[End - Will Show Later]
     
     style A fill:#e1f5fe

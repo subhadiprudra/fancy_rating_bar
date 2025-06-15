@@ -10,27 +10,43 @@ A beautiful, highly customizable Flutter rating dialog with stunning gradients, 
 
 ```mermaid
 flowchart TD
-    A[START] --> B[User completes a session]
-    B --> C{Has user completed X sessions?}
-    C -- No --> Z[Wait until X sessions]
-    C -- Yes --> D[Show Rating Dialog]
-    D --> E[User selects rating 1-5]
-    E --> F{Is rating ≥ 4}
-    
-    F -- Yes --> G[Ask to Rate on Play Store]
-    G --> H{Did user click "Rate"}
-    H -- Yes --> I[Open Play Store]
-    I --> J[Return to App and Show Thank You]
-    J --> K[Log stars and review to FeedbackNest]
-    K --> L[Developer views in FeedbackNest Dashboard]
+graph TD
+    A[App Launch] --> B{Session Counter Increment};
 
-    H -- No (Skip) --> M[Schedule to re-ask after Y sessions]
-    M --> L
+    B --> C{Is Session Count = X?};
 
-    F -- No --> N[Show Review Dialog for feedback]
-    N --> O[User writes a review]
-    O --> P[Log review and rating to FeedbackNest]
-    P --> L
+    C -- No --> A;
+    C -- Yes --> D[Show Rating Dialog];
+
+    D --> E{User Rated?};
+
+    E -- No (Skipped) --> F{Is Rating Dialog Shown for &gt;3 and User Skipped?};
+    E -- Yes --> G{Rating Value?};
+
+    F -- Yes --> H{Reset Session Counter to 0<br>Increment Skip Counter<br>Show Rating Dialog after Y sessions};
+    F -- No --> A;
+
+    G -- Rating &gt; 3 --> I{Ask User to Rate on Play Store};
+    G -- Rating &lt; 3 --> J[Show Review Dialog to Write Review];
+    G -- Rating = 3 --> K[Log Rating to FeedbackNest];
+
+    I --> L{User Rated on Play Store?};
+
+    L -- Yes --> M[Show Thank You Message];
+    L -- No --> N[Reset Session Counter to 0<br>Increment Skip Counter<br>Show Rating Dialog after Y sessions];
+
+    M --> O[Log: User Rated X Stars to FeedbackNest];
+    M --> P[Log: Open Store to Review in FeedbackNest API];
+
+    J --> Q[User Writes Review];
+    Q --> R[Log Rating and Review to FeedbackNest];
+
+    O --> S[Developer Can View Ratings and Reviews in FeedbackNest Dashboard];
+    P --> S;
+    K --> S;
+    R --> S;
+    N --> A;
+    H --> A;
 ```
 
 ## 🎬 Demo Flow
